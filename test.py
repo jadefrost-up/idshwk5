@@ -8,18 +8,14 @@ alp={'a','e','i','o','u'}
 
 def cal_data(s):
     d=np.zeros(6)
-    #print(s)
-    #计算length
     d[0]=int(len(s))
 
-    #统计数字个数
     sumt=0
     for i in s:
         if(i.isdigit()):
             sumt+=1
     d[1]=int(sumt)
-    
-    #统计字母熵
+
     h=0.0
     sumt=0
     letter=[0]*26
@@ -34,14 +30,12 @@ def cal_data(s):
                 h+=-(p*math.log(p,2))
     d[2]=h
 
-    #统计分段数
     sumt=0
     for i in s:
         if(i=='.'):
             sumt+=1
     d[3]=int(sumt)
-
-    #统计元音占比
+    
     h1=0
     h2=0
     h=0.0
